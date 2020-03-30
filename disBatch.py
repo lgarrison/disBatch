@@ -205,7 +205,7 @@ class BatchContext(object):
 #    range  => lo[-hi]
 # where lo and hi are numbers
 def nl2flat(nl):
-    return str(SUB.check_output(["scontrol", "show", "hostnames", nl])).splitlines()
+    return SUB.check_output(["scontrol", "show", "hostnames", nl], universal_newlines=True).splitlines()
 
 class SlurmContext(BatchContext):
     def __init__(self):
